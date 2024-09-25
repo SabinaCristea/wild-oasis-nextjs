@@ -1,4 +1,4 @@
-import { getCabin } from "@/app/_lib/data-service";
+import { getCabin, getCabins } from "@/app/_lib/data-service";
 import { EyeSlashIcon, MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 
@@ -9,6 +9,18 @@ import Image from "next/image";
 export async function generateMetadata({ params }) {
   const { name } = await getCabin(params.cabinId);
   return { title: `Cabin ${name}` };
+}
+
+// important; if already having the params it's good to tell next.js that by using generateStaticParams; good for performance
+// [cabinId] will be rendered as static instead of dynamic; the component will be prerendered as static
+export async function generateStaticParams() {
+  const cabins = await getCabins();
+
+  const ids = cabins.map((cabin) => ({
+    cabinId: String(cabin.id),
+  }));
+
+  return ids;
 }
 
 // PLACEHOLDER DATA
