@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import CabinList from "../_components/CabinList";
 import Spinner from "../_components/Spinner";
 import { EB_Garamond } from "next/font/google";
+import Filter from "../_components/Filter";
 
 //the page gets regenerated for each request = becomes dynamic again
 // export const revalidate = 0;
@@ -13,13 +14,16 @@ import { EB_Garamond } from "next/font/google";
 //And we can simply define that time using this revalidate value right here.
 
 //EG. once per hr = 3600
-export const revalidate = 3600;
+export const revalidate = 3600; //this one does not apply anymore after searchParams were set = the page becomes dynamic
 
 export const metadata = {
   title: "Cabins",
 };
 
-export default function Page() {
+export default function Page({ searchParams }) {
+  console.log(searchParams);
+
+  const filter = searchParams?.capacity ?? "all";
   return (
     <div>
       <h1 className="text-4xl mb-5 text-accent-400 font-medium">
@@ -34,8 +38,12 @@ export default function Page() {
         Welcome to paradise.
       </p>
 
-      <Suspense fallback={<Spinner />}>
-        <CabinList />
+      <div className="flex justify-end mb-8">
+        <Filter />
+      </div>
+      <Suspense fallback={<Spinner />} key={filter}>
+        {/* the key is used so the loading spinner appears when changing filters */}
+        <CabinList filter={filter} />
       </Suspense>
     </div>
   );
