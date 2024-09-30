@@ -3,6 +3,7 @@ import CabinList from "../_components/CabinList";
 import Spinner from "../_components/Spinner";
 import { EB_Garamond } from "next/font/google";
 import Filter from "../_components/Filter";
+import ReservationReminder from "../_components/ReservationReminder";
 
 //the page gets regenerated for each request = becomes dynamic again
 // export const revalidate = 0;
@@ -44,6 +45,7 @@ export default function Page({ searchParams }) {
       <Suspense fallback={<Spinner />} key={filter}>
         {/* the key is used so the loading spinner appears when changing filters */}
         <CabinList filter={filter} />
+        <ReservationReminder />
       </Suspense>
     </div>
   );
