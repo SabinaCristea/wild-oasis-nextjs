@@ -17,3 +17,4 @@ function SignInButton() {
 }
 
 export default SignInButton;
+//form because being a server component we cannot use dynamic functions or state so we will use an action declared in another component
