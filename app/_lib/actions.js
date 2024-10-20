@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { auth, signIn, signOut } from "./auth";
 import { supabase } from "./supabase";
 
@@ -24,6 +25,9 @@ export async function updateGuest(formData) {
 
   return data;
 }
+
+//for the data to update instantly, we revalidate the cache
+revalidatePath("/account/profile");
 
 export async function signInAction() {
   await signIn("google", { redirectTo: "/account" });
