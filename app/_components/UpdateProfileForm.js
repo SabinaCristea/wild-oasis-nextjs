@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { updateGuest } from "../_lib/actions";
-import { useFormStatus } from "react-dom";
+import Button from "./SubmitBtn";
 
 function UpdateProfileForm({ guest, children }) {
   const [count, setCount] = useState();
@@ -58,7 +58,7 @@ function UpdateProfileForm({ guest, children }) {
         </div>
 
         <div className="flex justify-end items-center gap-6">
-          <Button />
+          <Button pendingLabel="Updating...">Update profile </Button>
         </div>
       </form>
     </div>
@@ -69,18 +69,5 @@ function UpdateProfileForm({ guest, children }) {
 // So if the server action is doing its work or not. So again, we need to create a new component basically,
 // which needs to be rendered inside the form. It cannot be in a component that has the form, but it needs to be like this.
 // So in a component that is rendered inside the form.
-
-function Button() {
-  const { pending } = useFormStatus();
-
-  return (
-    <button
-      className="bg-accent-500 px-8 py-4 text-primary-800 font-semibold hover:bg-accent-600 transition-all disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-300"
-      disabled={pending}
-    >
-      {pending ? "Updating..." : "Update profile"}
-    </button>
-  );
-}
 
 export default UpdateProfileForm;
