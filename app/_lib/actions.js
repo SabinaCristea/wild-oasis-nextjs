@@ -66,7 +66,7 @@ export async function updateBooking(formData) {
   const guestBookingIds = guestBookings.map((booking) => booking.id);
 
   if (!guestBookingIds.includes(bookingId))
-    throw new Error("You are not allowed to delete this booking");
+    throw new Error("You are not allowed to update this booking");
 
   // 3. Building update data
   const updateData = {
