@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🏕️ Cabin Reservation Platform
 
-## Getting Started
+A feature-rich **Cabin Reservation Platform** built with **Next.js**, designed to provide users with a seamless experience for reserving cabins. This platform supports **Google Authentication**, cabin booking, reservation management, and user profile updates, with data securely stored using **Supabase**.
 
-First, run the development server:
+## Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Click [here](https://wild-oasis-nextjs-six.vercel.app/) to see the live demo of the Wild Oasis.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 🔐 User Authentication
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Google Sign-In** for secure and quick login.
+- Authentication handled by **NextAuth.js**.
 
-## Learn More
+### 🏡 Cabin Reservation System
 
-To learn more about Next.js, take a look at the following resources:
+- **Browse and Reserve** available cabins effortlessly.
+- Real-time availability checks ensure accurate bookings.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 📅 Reservation Management
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Dashboard** to view current and past reservations.
+- Options to **edit**, **update**, or **cancel** reservations.
 
-## Deploy on Vercel
+### 🧑‍💼 User Profile Management
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- View and **update user details**.
+- Data managed securely with **Supabase**.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### 💻 Modern UI/UX
+
+- Styled with **Tailwind CSS** for a clean, modern look.
+
+## 🛠️ Technology Stack
+
+- **Frontend**: [Next.js](https://nextjs.org/)
+- **Authentication**: [NextAuth.js](https://next-auth.js.org/)
+- **Backend**: Next.js API Routes
+- **Database**: [Supabase](https://supabase.io/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+
+## 📸 Screenshots
+
+### Home Page
+
+![Home Page](./public/home.png)
+
+### About The Business
+
+![About Page](./public/info.png)
+
+### Cabins List
+
+![Cabins Page](./public/cabins.png)
+
+### Reserve a cabin
+
+![Cabin Details](./public/cabin.png)
+
+### Authenticate
+
+![Google Auth](./public/auth.png)
+
+### User Reservation
+
+![Reservations Page](./public/reservations.png)
+
+### User Profile Management
+
+![Profile Management](./public/profile.png)
+
+## License
+
+This project is licensed under [Jonas Schmedtmann](https://github.com/jonasschmedtmann).
+
+## Contact
+
+For any questions or inquiries, please feel free to reach out to me at sabinacristea997@gmail.com.
